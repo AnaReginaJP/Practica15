@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear una imágen de una galaxia</title>
+    <link rel="stylesheet" href="css/estilos.css">
+     <script>
+var foto = [
+[0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+
+]
+</script>
+</head>
+<body>
+    <header>
+        <h1>Crear una imágen de acuerdo al valor del pixel</h1>
+        <h2>Código de color: 0: black 1:white 2:celeste 3:azul 4:verde 5:amarillo 6:rojo</h2>
+    </header>
+    <main>
+   
+	<script>
+        document.write("<center><table>");
+        for(var i=0; i<42; i++) {
+            document.write("<tr>");
+            for(var j=0; j<31; j++) {
+                switch (foto[i][j]){
+                    case 0: document.write("<td class='purple'>"+foto[i][j]+"</td>");break;
+                    case 1: document.write("<td class='black'>"+foto[i][j]+"</td>");break;   
+                    case 2: document.write("<td class='ciel'>"+foto[i][j]+"</td>");break;
+                    case 3: document.write("<td class='blue'>"+foto[i][j]+"</td>");break;
+                    case 4: document.write("<td class='green'>"+foto[i][j]+"</td>");break;
+                    case 5: document.write("<td class='yellow'>"+foto[i][j]+"</td>");break;
+                    case 6: document.write("<td class='red'>"+foto[i][j]+"</td>");break;
+                }
+            }
+            document.write('</tr>');
+        }
+        document.write("</table></center>");
+    	</script>
+    </main>
+    <footer>
+    <p>Referencia: Ejercicios de astronomia, ESA/ESO </p>    
+    </footer>
+</body>
+</html>

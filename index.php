@@ -39,7 +39,7 @@ function calcula_paralaje() {
         <h2>Datos:</h2>
         <p>d = 2,47E15 km</p>
         <p>d en metros = 2,47 × 10^18 m</p>
-        <p>1 rad = 57.2958 grados</p>
+        <p>1 rad = 206264.806 arcosegundos</p>
       </section>
       <section class="calculos">
         <h2>Solución</h2>
@@ -55,7 +55,8 @@ function calcula_paralaje() {
             <?php
             if (isset($_POST['calcular'])) {
                 $paralaje = calcula_paralaje();
-                echo "El ángulo de paralaje de la estrella es aproximadamente de " . number_format($paralaje, 5, '.', '') . " radianes o " . number_format(rad2deg($paralaje), 4, '.', '') . " grados.";
+                $paralaje_arcosegundos = $paralaje * 206264.806; // Convertimos radianes a arcosegundos
+                echo "P = " . number_format($paralaje_arcosegundos, 7, '.', '') . " arcosegundos.";
             }
             ?>
         </div>

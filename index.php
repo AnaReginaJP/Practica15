@@ -4,6 +4,9 @@ function calcula_paralaje() {
     $resultado = 1.50e11 / $distancia;
     return $resultado;
 }
+
+$paralaje = calcula_paralaje();
+$paralaje_arcosegundos = $paralaje * 206264.806; // Convertimos radianes a arcosegundos
 ?>
 
 <!DOCTYPE html>
@@ -45,19 +48,12 @@ function calcula_paralaje() {
         <h2>Solución</h2>
         <p>a) El paralaje de los ángulos de la estrella es:</p>
         <p>paralaje, p(rad) = (1,50 × 10^11) / (2,47 × 10^18)</p>
-        <form method="post" action="index.php">
-            <button type="submit" name="calcular">Presiona para calcular</button>
-        </form>
       </section>
       <section class="resultado">
         <h2>Resultado:</h2>
         <div id="resultadoA">
             <?php
-            if (isset($_POST['calcular'])) {
-                $paralaje = calcula_paralaje();
-                $paralaje_arcosegundos = $paralaje * 206264.806; // Convertimos radianes a arcosegundos
-                echo "P = " . number_format($paralaje_arcosegundos, 7, '.', '') . " arcosegundos.";
-            }
+            echo "P = " . number_format($paralaje_arcosegundos, 7, '.', '') . " arcosegundos.";
             ?>
         </div>
       </section>
@@ -67,4 +63,5 @@ function calcula_paralaje() {
   </section>
 </body>
 </html>
+
 
